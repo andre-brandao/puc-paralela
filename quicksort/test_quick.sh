@@ -12,4 +12,4 @@ echo "Compiling quicksort-omp.c"
 gcc quicksort-omp.c -o3 quicksort-omp -fopenmp -lm
 
 echo "Testing quicksort-omp.c"
-time OMP_NUM_THREADS=2 ./quicksort-omp
+time ./quicksort-omp

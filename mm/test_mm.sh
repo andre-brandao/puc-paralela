@@ -32,7 +32,7 @@ gcc mm-omp.c -O3 -o mm-omp -fopenmp -lm
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓ Compilation successful${NC}"
     echo -e "${YELLOW}Testing mm-omp.c with 4 threads${NC}"
-    time OMP_NUM_THREADS=4 ./mm-omp
+    time ./mm-omp
 else
     echo -e "${RED}✗ Compilation failed${NC}"
 fi

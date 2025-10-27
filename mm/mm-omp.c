@@ -40,4 +40,10 @@ int main()
   //    printf("\n c[%d][%d] = %f",i,j,c[i*width+j]);
   //  }
   // }
+  
+  free(a);
+  free(b);
+  free(c);
+  
+  return 0;
 }

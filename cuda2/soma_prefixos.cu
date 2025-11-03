@@ -76,16 +76,16 @@ int main() {
 	vector<int> host_somas_prefixos(N);
 
     // Inicializa o vetor , i. e., aloca memória na maquina host
-    generate(begin(host_arr), end(host_arr), [](){ return rand() % 10; });
+    for (int i = 0; i < N; ++i) host_arr[i] = rand() % 10;
 
 	// Aloca memória no dispositivo (device)
 	int *device_arr, *device_somas_prefixos;
 	cudaMalloc(&device_arr, bytes);
 	cudaMalloc(&device_somas_prefixos, bytes);
-	
+
 	// Copia da maquina hospedeira (host) para o dispositivo (device)
 	cudaMemcpy(device_arr, host_arr.data(), bytes, cudaMemcpyHostToDevice);
-	
+
 	// Tamanho do bloco em número de threads
 	const int TAMANHO_BLOCO = 8;
 

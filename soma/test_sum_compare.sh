@@ -1,5 +1,5 @@
 echo "Compiling sum_cuda-1.cu"
-nvcc sum_cuda-1.cu -O3 -o sum_shared
+nvcc -arch=sm_61 sum_cuda-1.cu -O3 -o sum_shared
 
 echo "Testing sum_shared"
 time ./sum_shared
@@ -7,7 +7,7 @@ time ./sum_shared
 echo "----------------"
 
 echo "Compiling sum_cuda-1_noshared.cu"
-nvcc sum_cuda-1_noshared.cu -O3 -o sum_noshared
+nvcc -arch=sm_61 sum_cuda-1_noshared.cu -O3 -o sum_noshared
 
 echo "Testing sum_noshared"
 time ./sum_noshared

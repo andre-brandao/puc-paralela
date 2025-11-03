@@ -16,7 +16,7 @@ echo "----------------"
 
 if command -v nvprof >/dev/null 2>&1; then
   echo "Profiling soma_prefixos_gpu (nvprof)"
-  nvprof ./soma_prefixos_gpu
+  nvprof --unified-memory-profiling off ./soma_prefixos_gpu
 else
   echo "nvprof not found; skipping profiling run"
 fi

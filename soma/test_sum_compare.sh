@@ -16,12 +16,12 @@ echo "----------------"
 
 if command -v nvprof >/dev/null 2>&1; then
   echo "Profiling sum_shared (nvprof)"
-  nvprof ./sum_shared
+  nvprof --unified-memory-profiling off ./sum_shared
 
   echo "----------------"
 
   echo "Profiling sum_noshared (nvprof)"
-  nvprof ./sum_noshared
+  nvprof --unified-memory-profiling off ./sum_noshared
 else
   echo "nvprof not found; skipping profiling runs"
 fi
